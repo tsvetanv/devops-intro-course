@@ -16,18 +16,7 @@
 
 2.2 Layers
 
-![docker container layers 1](/images/02-01-devops-intro-docker-image-layers.png)
-
-
-![docker container layers 2](/images/02-02-devops-intro-docker-image-layers.png)
-
 2.3 Workflow
-
-![docker platform](/images/02-03-devops-intro-docker-platform.png)
-
-
-
-![docker workflow](/images/02-04-devops-intro-docker-workflow.png)
 
 
 ## 3. Docker - Advanced
