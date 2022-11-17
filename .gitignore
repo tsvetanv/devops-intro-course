@@ -23,3 +23,9 @@ images/
 # Course Notes to comply with copyright license
 notes_devops.md
 
+# IntelliJ Idea IDE
+target/
+*.iml
+.idea/*
+
+
