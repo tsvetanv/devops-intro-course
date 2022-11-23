@@ -1,0 +1,47 @@
+pipeline 
+{
+    agent 
+    {
+        label 'docker'
+    }
+    stages 
+    {
+        stage('Clone') 
+        {
+            steps 
+            {
+                git branch: 'main', url: 'http://192.168.121.122:3000/tsvetanv/retake'
+            }
+        }
+        stage('Build')
+        {
+            steps
+            {
+                sh 'cd frontend; docker image build -t img-frontend .'
+				sh 'cd database; docker image build -t img-database .'
+				sh 'cd backend; docker image build -t img-backend .'
+            }
+        }
+        stage('Run')
+        {
+            steps
+            {
+                sh 'docker container rm -f con-backend || true'
+                sh 'docker container run -d --name con-backend --net retake -e DB_PASS=ExamPa$$w0rd img-backend'
+				
+				sh 'docker container rm -f con-database || true'
+                sh 'docker container run -d --name con-database --net retake -e MYSQL_ROOT_PASSWORD=ExamPa$$w0rd img-database'
+				
+				sh 'docker container rm -f con-frontend || true'
+                sh 'docker container run -d --name con-frontend --net retake -e DB_PASS=ExamPa$$w0rd -p 8080:5000 img-frontend'
+            }
+        }
+        stage('Clean')
+        {
+            steps
+            {
+                cleanWs()
+            }
+        }
+    }
+}

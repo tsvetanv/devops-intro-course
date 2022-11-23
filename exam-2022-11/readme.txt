@@ -1,0 +1,2 @@
+1. Look at the 'Workflow_Activity_Diagram.xlsx' file which is an activity diagram of my solution
+2. Look at the screenshots in the folder 'screenshot'. The pictures follow the ordering of the activity diagram.
