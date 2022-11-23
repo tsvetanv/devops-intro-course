@@ -1,6 +1,3 @@
-# devops-intro-course
-DevOps Intro Course
-
 Final exam of [SoftUni-DevOps-Fundamental-2022-02 Course](https://softuni.bg/trainings/3670/devops-containerization-ci-cd-monitoring-february-2022)
 
 
